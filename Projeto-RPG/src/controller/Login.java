@@ -1,65 +1,58 @@
-/*
- * A classe login irá garantir que o usúario faço o login no sistema do jogo. 
- */
 
-// Pacote Modelo
-package modelo;
+// Pacote controller
+package controller;
 
 public class Login
 {
     // Variável que contem o nome para logar no sistema.
-    private String nome;
+    private String usuario;
     // Variável que tem a senha do usúario para logar no sistema.
     private String senha;
     
     // Construtor padrão.
     public Login(){}
     // Construtor completo.
-    public Login(String nome, String senha)
-    {
-         this.setNome(nome);
+    public Login(String usuario, String senha){
+         this.setUsuario(usuario);
          this.setSenha(senha);
     }
     
     // Método para setar o nome.
-    public void setNome(String nome)
-    {
+    public int setUsuario(String usuario){
          try{
-            if(nome.isEmpty()){
+            if(usuario.isEmpty()){
                 throw new NullPointerException();
             }
             else{
-                this.nome = nome;
+                this.usuario = usuario;
+                return 1;
             }
         }
-        catch(NullPointerException erroNome){
-            throw new NullPointerException();
+        catch(NullPointerException erroUsuario){
+            return 0;
         }
     }
     // Método para recuperar o conteúdo que está na variável nome.
-    public String getNome()
-    {
-         return this.nome;
+    public String getUsuario(){
+         return this.usuario;
     }
-    
     // Método para atribuir valor a variável senha.
-    public void setSenha(String senha)
-    {
+    public int setSenha(String senha){
          try{
-              if(nome.isEmpty()){
+              if(senha.isEmpty()){
                    throw new NullPointerException();
               }
               else{
-                   this.nome = nome;
+                   this.senha = senha;
+                   return 1;
               }
          }
          catch(NullPointerException erroNome){
-              throw new NullPointerException();
+              return 0;
          } 
     }
     //Método para recuperar o conteúdo que está na variável senha.
-    public String getSenha()
-    {
+    public String getSenha(){
          return this.senha;
     }
 }
