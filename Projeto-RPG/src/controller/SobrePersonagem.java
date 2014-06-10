@@ -16,13 +16,13 @@ public class SobrePersonagem {
                   JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, options, options[1]);
               //se o número for igual a 0, irá será criado um arqueiro
               if ( numero == 0 ){
-                  PersonagemArqueiro pa = new PersonagemArqueiro();
-                  pa.criarArqueiro();
+                  PersonagemArqueiro personagemArqueiro = new PersonagemArqueiro();
+                  personagemArqueiro.criarArqueiro();
               }
               //senão for igual a 0, irá voltar na tela para o usuário escolher um novo personagem
               else{
-                  PersonagemEscolher pe = new PersonagemEscolher();
-                  pe.escolherPersonagem();
+                  PersonagemEscolher personagemEscolher = new PersonagemEscolher();
+                  personagemEscolher.escolherPersonagem();
               }
         }
         //se o número for igual a 1 ele podera ler sobre o que é guerreiro, sobre quanto ele terá de 
@@ -34,13 +34,13 @@ public class SobrePersonagem {
                   JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, options, options[1]);
              //se o número for igual a 0, irá será criado um guerreiro
               if ( numero == 0 ){
-                  PersonagemGuerreiro pg = new PersonagemGuerreiro();
-                  pg.criarGuerreiro();
+                  PersonagemGuerreiro personagemGuerreiro = new PersonagemGuerreiro();
+                  personagemGuerreiro.criarGuerreiro();
               }
               //senão for igual a 0, irá voltar na tela para o usuário escolher um novo personagem
               else{
-                  PersonagemEscolher pe = new PersonagemEscolher();
-                  pe.escolherPersonagem();
+                  PersonagemEscolher personagemEscolher = new PersonagemEscolher();
+                  personagemEscolher.escolherPersonagem();
               }
         }
         //se o número for igual a 2 ele podera ler sobre o que é mago, sobre quanto ele terá de 
@@ -52,13 +52,13 @@ public class SobrePersonagem {
                   JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, options, options[1]);
              //se o número for igual a 0, irá será criado um mago
               if ( numero == 0 ){
-                  PersonagemMago pm = new PersonagemMago();
-                  pm.criarMago();
+                  PersonagemMago personagemMago = new PersonagemMago();
+                  personagemMago.criarMago();
               }
                //senão for igual a 0, irá voltar na tela para o usuário escolher um novo personagem
               else{
-                  PersonagemEscolher pe = new PersonagemEscolher();
-                  pe.escolherPersonagem();
+                  PersonagemEscolher personagemEscolher = new PersonagemEscolher();
+                  personagemEscolher.escolherPersonagem();
               }
         }
     }

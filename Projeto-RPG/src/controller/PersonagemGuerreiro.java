@@ -28,7 +28,4 @@ public class PersonagemGuerreiro extends Personagem{
     public void valorDestreza() {
         this.setDestreza(4);
     }
-    
-
-    
 }

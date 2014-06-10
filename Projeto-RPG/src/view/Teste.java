@@ -16,10 +16,7 @@ Professor: Jader
 Desenvolvido por:
 Deivis Henrique Alves - Matrícula 2480
 Danilo Lemos Prado - Matrícula 2489
-<<<<<<< HEAD
 Gustavo Amaral Silva - Matrícula 2464
-=======
->>>>>>> 3f4f7aa2ae06c9e75831ce248b40c927c5d1bc24
 */
 
 // Pacote View
@@ -33,9 +30,9 @@ public class Teste{
     
     public static void main(String arg[]){
         //criando um objeto da classe EscolhaOpcao
-        EscolhaOpcao ec = new EscolhaOpcao();
+        EscolhaOpcao escolhaOpcao = new EscolhaOpcao();
         //chamando o método direcionar da classe EscolhaOpcao
-        ec.direcionar();
+        escolhaOpcao.direcionar();
         
     }
 }

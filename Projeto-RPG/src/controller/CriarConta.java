@@ -16,7 +16,7 @@ public class CriarConta {
         int erro = 0;
         //repeti enquanto a variável erro for igual a 0
         do{
-            erro = c.setEmail(JOptionPane.showInputDialog("Informa o seu e-mail")); 
+            erro = c.setEmail(JOptionPane.showInputDialog("Informe o seu e-mail")); 
         }while( erro == 0 );   
         //repeti enquanto a variável erro for igual a 0
         do{
@@ -45,14 +45,14 @@ public class CriarConta {
     //método que direciona o usuário para a tela desejada de acordo com a opção escolhida acima
     public void escolherOpcao(int numero){
         if ( numero == 0 ){
-            VerificaConta gc = new VerificaConta();
-            gc.verificarConta();
+            VerificaConta verificaConta = new VerificaConta();
+            verificaConta.verificarConta();
         }
         else if ( numero == 1 )
             criarConta();
         else{
-            EscolhaOpcao ec = new EscolhaOpcao();
-            ec.direcionar();
+            EscolhaOpcao escolhaOpcao = new EscolhaOpcao();
+            escolhaOpcao.direcionar();
         }
     }
 }

@@ -17,41 +17,41 @@ public class PersonagemEscolher {
     //método que direciona o usuário de acordo com a opção escolhida acima
     public void escolherOpcao(int numero){
         //cria uma objeto da classe SobrePersonagem
-        SobrePersonagem sp = new SobrePersonagem();
+        SobrePersonagem sobrePersonagem = new SobrePersonagem();
         //se numero for igual a 3, irá criar um objeto da classe EscolhaOpcao e chamar o metodo direcionar
         if ( numero == 3 ){
-            EscolhaOpcao eo = new EscolhaOpcao();
-            eo.direcionar();
+            EscolhaOpcao escolherOpcao = new EscolhaOpcao();
+            escolherOpcao.direcionar();
         }
         /*se o numero for igual a 0, irá criar um objeto da classe PersonagemArqueiro e chamar os metodos
         dessa classe, também chamará o metodo sobre da classe SobrePersonagem
         */
         else if ( numero == 0 ){
-            PersonagemArqueiro pa = new PersonagemArqueiro();
-            pa.valorDestreza();
-            pa.valorForca();
-            pa.valorInteligencia();
-            sp.sobre(numero);
+            PersonagemArqueiro personagemArqueiro = new PersonagemArqueiro();
+            personagemArqueiro.valorDestreza();
+            personagemArqueiro.valorForca();
+            personagemArqueiro.valorInteligencia();
+            sobrePersonagem.sobre(numero);
         }
         /*se o numero for igual a 1, irá criar um objeto da classe PersonagemGuerreiro e chamar os metodos
         dessa classe, também chamará o metodo sobre da classe SobrePersonagem
         */
         else if ( numero == 1 ){
-            PersonagemGuerreiro pg = new PersonagemGuerreiro();
-            pg.valorDestreza();
-            pg.valorForca();
-            pg.valorInteligencia();
-            sp.sobre(numero);
+            PersonagemGuerreiro personagemGuerreiro = new PersonagemGuerreiro();
+            personagemGuerreiro.valorDestreza();
+            personagemGuerreiro.valorForca();
+            personagemGuerreiro.valorInteligencia();
+            sobrePersonagem.sobre(numero);
         }
         /*se o numero for diferente de todos acima, irá criar um objeto da classe PersonagemMago e chamar os metodos
         dessa classe, também chamará o metodo sobre da classe SobrePersonagem
         */
         else{
-            PersonagemMago pm = new PersonagemMago();
-            pm.valorDestreza();
-            pm.valorForca();
-            pm.valorInteligencia();
-            sp.sobre(numero);
+            PersonagemMago personagemMago = new PersonagemMago();
+            personagemMago.valorDestreza();
+            personagemMago.valorForca();
+            personagemMago.valorInteligencia();
+            sobrePersonagem.sobre(numero);
         }
     }
 }

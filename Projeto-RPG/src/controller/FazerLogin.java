@@ -24,9 +24,7 @@ public class FazerLogin {
     }
     //metodo que chama a classe VerificaLogin()
     public void verificarLogin(){
-        VerificaLogin vl = new VerificaLogin();
-        
-        vl.verificarLogin();
+        VerificaLogin verificaLogin = new VerificaLogin();
+        verificaLogin.verificarLogin();
     }
-    
 }

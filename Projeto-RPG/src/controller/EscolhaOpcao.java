@@ -18,12 +18,12 @@ public class EscolhaOpcao {
     //Método que direciona se o usuário quer criar uma conta, fazer login ou sair    
     public void escolherOpcao(int numero){
         if ( numero == 0 ){
-            CriarConta cc = new CriarConta();
-            cc.criarConta();
+            CriarConta criarConta = new CriarConta();
+            criarConta.criarConta();
         }
         else if ( numero == 1 ){
-            FazerLogin l = new FazerLogin();
-            l.fazerLogin();
+            FazerLogin login = new FazerLogin();
+            login.fazerLogin();
         }
         else 
             System.exit(0);
