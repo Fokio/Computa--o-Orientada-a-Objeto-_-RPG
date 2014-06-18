@@ -9,7 +9,7 @@ public class Conta implements Serializable {
     private String senha;
     private String usuario;
     
-    //construtor padrÃ£o
+    //construtor padrão
     public Conta(){};
     //contrutor completo
     public Conta ( String email, String senha, String usuario){
@@ -38,11 +38,7 @@ public class Conta implements Serializable {
         return this.email;
     }
     
-<<<<<<< HEAD:Projeto-RPG/src/controller/Conta.java
-    //metodo para setar uma senha informada, se a senha for nula irÃ¡ apresentar um erro
-=======
     //metodo para setar uma senha informada, se a senha for nula irá apresentar um erro
->>>>>>> origin/master:Computa--o-Orientada-a-Objeto-_-RPG-master/Projeto-RPG/src/controller/Conta.java
     public void setSenha(String senha){
         try{
             if ( senha == null ){
@@ -61,11 +57,7 @@ public class Conta implements Serializable {
 
     }
     
-<<<<<<< HEAD:Projeto-RPG/src/controller/Conta.java
-    //metodo para setar o usuÃ¡rio passado, se o usuÃ¡rio for nulo irÃ¡ apresentar um erro 
-=======
     //metodo para setar o usuário passado, se o usuário for nulo irá apresentar um erro 
->>>>>>> origin/master:Computa--o-Orientada-a-Objeto-_-RPG-master/Projeto-RPG/src/controller/Conta.java
     public void setUsuario(String usuario){
         try{
             if ( usuario == null ){
@@ -78,7 +70,7 @@ public class Conta implements Serializable {
               throw new NullPointerException();
         }
     }
-    //metodo para mostrar o usuÃ¡rio
+    //metodo para mostrar o usuário
     public String getUsuario(){
         return this.usuario;
     }

@@ -1,21 +1,21 @@
 //pacote controller
 package controller;
-//importaÃ§Ã£o das classes necessÃ¡rias
+//importação das classes necessárias
 import javax.swing.JOptionPane;
 
 public class EscolhaOpcao {
      
-    //MÃ©todo que cria uma tela para o usuÃ¡rio escolher entre 3 opÃ§Ãµes ( Criar Conta, Fazer Login , Sair )     
+    //Método que cria uma tela para o usuário escolher entre 3 opções ( Criar Conta, Fazer Login , Sair )     
     public void direcionar(){
         int numero;
         Object[] options = { "Criar Conta", "Fazer Login","Sair" };
         
-       numero = JOptionPane.showOptionDialog(null,"Escolha uma das opÃ§Ãµes","CONTA",JOptionPane.YES_NO_CANCEL_OPTION,
+       numero = JOptionPane.showOptionDialog(null,"Escolha uma das opções","CONTA",JOptionPane.YES_NO_CANCEL_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
        
        escolherOpcao(numero);
    }
-    //MÃ©todo que direciona se o usuÃ¡rio quer criar uma conta, fazer login ou sair    
+    //Método que direciona se o usuário quer criar uma conta, fazer login ou sair    
     public void escolherOpcao(int numero){
         if ( numero == 0 ){
             CriarConta criarConta = new CriarConta();
