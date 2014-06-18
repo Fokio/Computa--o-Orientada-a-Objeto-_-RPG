@@ -22,7 +22,7 @@ public class EscolhaOpcao {
             criarConta.criarConta();
         }
         else if ( numero == 1 ){
-            FazerLogin login = new FazerLogin();
+            Login login = new Login();
             login.fazerLogin();
         }
         else 
