@@ -5,9 +5,24 @@ import javax.swing.JOptionPane;
 
 public class PersonagemArqueiro extends Personagem{
 
+    
+    public PersonagemArqueiro(){};
+    public PersonagemArqueiro(String nome, int nivel, double forca, double destreza, double inteligencia,String tipoPersonagem, double dinheiro){
+        super(nome, nivel, forca, destreza, inteligencia, tipoPersonagem, dinheiro);
+    }
     //método para usuário informar o nome do arqueiro
     public void criarArqueiro (){
-        this.setNome(JOptionPane.showInputDialog("Informe o nome para o Arqueiro"));
+        PersonagemArqueiro personagemArqueiro = new PersonagemArqueiro();
+        personagemArqueiro.setNome(JOptionPane.showInputDialog("Informe o nome para o Arqueiro"));
+        personagemArqueiro.valorDestreza();
+        personagemArqueiro.valorForca();
+        personagemArqueiro.valorInteligencia();
+        personagemArqueiro.setDinheiro(10);
+        personagemArqueiro.setClassePersonagem("Arqueiro");
+        personagemArqueiro.setNivel(0);
+        JOptionPane.showMessageDialog(null, "Arqueiro "+personagemArqueiro.getNome()+ " criado com sucesso!\n Faça login para jogar");
+        TelaPrincipalRPG tela = new TelaPrincipalRPG();
+        tela.jogadas(personagemArqueiro);
     }
     //método herdado da classe Personagem
     @Override

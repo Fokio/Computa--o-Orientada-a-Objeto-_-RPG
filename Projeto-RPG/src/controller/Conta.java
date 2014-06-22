@@ -1,7 +1,9 @@
 //pacote controller
 package controller;
 
-public class Conta {
+import java.io.Serializable;
+
+public class Conta implements Serializable {
     //variaveis usadas    
     private String email;
     private String senha;
@@ -15,37 +17,38 @@ public class Conta {
         this.setSenha(senha);
         this.setUsuario(usuario);
     }
+    
     //metodo para setar o email passado, se o email for nulo vai informar um erro
-    public int setEmail(String email){
+    public void setEmail(String email) throws NullPointerException{
          try{
-              if(email.isEmpty()){
+              if(email == null)
+              {
                    throw new NullPointerException();
               }
               else{
                    this.email = email;
-                   return 1;
               }
          }
-         catch(NullPointerException erroEmail){
-              return 0;
-         } 
+         catch(NullPointerException erroNome){
+              throw new NullPointerException();
+         }
     }
     //metodo para mostrar o email informado
     public String getEmail(){
         return this.email;
     }
+    
     //metodo para setar uma senha informada, se a senha for nula irá apresentar um erro
-    public int setSenha(String senha){
+    public void setSenha(String senha){
         try{
-            if ( senha.isEmpty() ){
+            if ( senha == null ){
                 throw new NullPointerException();
             }else{
                 this.senha = senha;
-                return 1;
             }
         }
         catch(NullPointerException erroSenha){
-            return 0;
+            throw new NullPointerException();
         }
     }
     //metodo para mostrar a senha
@@ -53,18 +56,18 @@ public class Conta {
         return this.senha;
 
     }
+    
     //metodo para setar o usuário passado, se o usuário for nulo irá apresentar um erro 
-    public int setUsuario(String usuario){
+    public void setUsuario(String usuario){
         try{
-            if ( usuario.isEmpty() ){
+            if ( usuario == null ){
                 throw new NullPointerException();
             }else{
                 this.usuario = usuario;
-                return 1;
             }
         }
         catch(NullPointerException erroUsuario){
-            return 0;
+              throw new NullPointerException();
         }
     }
     //metodo para mostrar o usuário

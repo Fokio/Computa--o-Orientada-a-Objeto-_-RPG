@@ -23,15 +23,31 @@ Gustavo Amaral Silva - Matrícula 2464
 package view;
 
 // Importação das bibliotecas necessarias.
-import controller.EscolhaOpcao;
-
+import java.io.*;
+import controller.*;
+import javax.swing.*;
+import model.*;
 
 public class Teste{
     
     public static void main(String arg[]){
-        //criando um objeto da classe EscolhaOpcao
+        
+        //Criando objetos das classes necessárias.
         EscolhaOpcao escolhaOpcao = new EscolhaOpcao();
-        //chamando o método direcionar da classe EscolhaOpcao
+        ManipulacaoArquivo manipulaArquivo = new ManipulacaoArquivo();
+        
+        try
+        {
+              //Chamando o método criarDiretorioPrincipal() na classe manipulacaoArquivo, esse método irá criar a pasta Arquivo se ela não existir.
+              manipulaArquivo.criarDiretorioPrincipal();
+        }
+        catch (IOException erroCriarArquivo)
+        {
+              //Reportando algum erro na criação da pasta Arquivo.
+              JOptionPane.showMessageDialog(null, "Erro! Houve um erro ao criar os arquivos necessários!", "Aviso", JOptionPane.ERROR_MESSAGE);
+        }
+
+        //Chamando o método direcionar() da classe EscolhaOpcao
         escolhaOpcao.direcionar();
         
     }

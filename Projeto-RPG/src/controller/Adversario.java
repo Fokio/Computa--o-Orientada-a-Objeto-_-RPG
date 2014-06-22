@@ -1,41 +1,29 @@
-//pacote controller
+
 package controller;
 
-
-public abstract class Personagem {
-    //variaveis necessarias
+public class Adversario {
+ 
     private String nome;
     private int nivel;
     private double forca;
     private double destreza;
     private double inteligencia;
-    private String classePersonagem;
     private double dinheiro;
-    //construtor padrão
-    public Personagem(){};
-    //construtor completo
-    public Personagem(String nome, int nivel, double forca, double destreza, double inteligencia,String classePersonagem, double dinheiro){
+    
+    public Adversario(){};
+    public Adversario(String nome, int nivel, double forca, double destreza, double inteligencia, double dinheiro){
         this.setNome(nome);
         this.setNivel(nivel);
         this.setForca(forca);
         this.setDestreza(destreza);
         this.setInteligencia(inteligencia);
-        this.setClassePersonagem(classePersonagem);
         this.setDinheiro(dinheiro);
-   }
-    //metodo para setar o nome, se o valor informado for nulo irá informar um erro 
-    public int setNome(String nome){
-        try{
-            if ( nome.isEmpty() ){
-                throw new NullPointerException();
-            }else{
-                this.nome = nome;
-                return 1;
-            }
-        }catch(NullPointerException erroNome){
-            return 0;
-        }
     }
+    
+    //metodo para setar o nome
+      public void setNome(String nome){
+        this.nome = nome;
+      }
     //metodo para mostar o nome
     public String getNome(){
         return this.nome;
@@ -72,14 +60,6 @@ public abstract class Personagem {
     public double getInteligencia(){
         return this.inteligencia;
     }
-    //metodo para setar a classe do personagem
-    public void setClassePersonagem(String classePersonagem){
-        this.classePersonagem = classePersonagem;
-    }
-    //metodo para exibir a classe
-    public String getClasseoPersonagem(){
-        return this.classePersonagem;
-    }
     //metodo para setar o dinheiro do personagem
     public void setDinheiro(double dinheiro){
         this.dinheiro = dinheiro;
@@ -88,9 +68,4 @@ public abstract class Personagem {
     public Double getDinheiro(){
         return this.dinheiro;
     }
-    //metodos abstratos que terão obrigatoriamente serem implentados nas classes filhas de Personagem
-    public abstract void valorForca();
-    public abstract void valorInteligencia();
-    public abstract void valorDestreza();
-
 }

@@ -5,13 +5,25 @@ import javax.swing.JOptionPane;
 
 public class PersonagemMago extends Personagem{
     
+    //construtor padrão
     public PersonagemMago(){};
-    public PersonagemMago(String nome, int nivel, double forca, double destreza, double inteligencia){
-        super(nome, nivel, forca, destreza, inteligencia);
+    //construtor completo
+    public PersonagemMago(String nome, int nivel, double forca, double destreza, double inteligencia, String tipoPersonagem, double dinheiro){
+        super(nome, nivel, forca, destreza, inteligencia, tipoPersonagem, dinheiro);
     }
     //método para usuário informar o nome do mago
     public void criarMago (){
-        this.setNome(JOptionPane.showInputDialog("Informe o nome para o Mago"));
+        PersonagemMago personagemMago = new PersonagemMago();
+        personagemMago.setNome(JOptionPane.showInputDialog("Informe o nome para o Mago"));
+        personagemMago.valorDestreza();
+        personagemMago.valorForca();
+        personagemMago.valorInteligencia();
+        personagemMago.setDinheiro(10);
+        personagemMago.setClassePersonagem("Mago");
+        personagemMago.setNivel(10);
+        JOptionPane.showMessageDialog(null, "Mago "+personagemMago.getNome()+ " criado com sucesso!\n Faça login para jogar");
+        TelaPrincipalRPG tela = new TelaPrincipalRPG();
+        tela.jogadas(personagemMago);
     }
     //método herdado da classe Personagem
     @Override

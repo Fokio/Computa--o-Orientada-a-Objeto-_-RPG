@@ -2,57 +2,62 @@
 // Pacote controller
 package controller;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import model.ManipulacaoArquivo;
+
 public class Login
 {
-    // Variável que contem o nome para logar no sistema.
-    private String usuario;
-    // Variável que tem a senha do usúario para logar no sistema.
-    private String senha;
-    
     // Construtor padrão.
     public Login(){}
-    // Construtor completo.
-    public Login(String usuario, String senha){
-         this.setUsuario(usuario);
-         this.setSenha(senha);
-    }
-    
-    // Método para setar o nome.
-    public int setUsuario(String usuario){
-         try{
-            if(usuario.isEmpty()){
-                throw new NullPointerException();
+
+    //Método para fazer login no jogo, esse método irá pegar os dados de login, como usúario e senha, irá verificar no sistema se os dados são consistentes
+    public Conta fazerLogin(){
+        //variaveis necessarias
+         ManipulacaoArquivo manipulaArquivo = new ManipulacaoArquivo();
+         String usuario = "";
+         String senha = "";
+         boolean continuar = false;
+         Conta conta = new Conta();
+         do
+         {
+            try
+            {
+                 usuario = JOptionPane.showInputDialog(null, "Informe o usuário");
+                 manipulaArquivo.pesquisarUsuario(usuario);
+                 continuar = true;
             }
-            else{
-                this.usuario = usuario;
-                return 1;
+            catch (IOException e)
+            {
+                   JOptionPane.showMessageDialog(null, "Informe um usúario válido!", "Aviso", JOptionPane.ERROR_MESSAGE);
             }
-        }
-        catch(NullPointerException erroUsuario){
-            return 0;
-        }
-    }
-    // Método para recuperar o conteúdo que está na variável nome.
-    public String getUsuario(){
-         return this.usuario;
-    }
-    // Método para atribuir valor a variável senha.
-    public int setSenha(String senha){
-         try{
-              if(senha.isEmpty()){
-                   throw new NullPointerException();
+         }while ( continuar == false );
+
+         do
+         {
+              try
+              {
+                   senha = JOptionPane.showInputDialog(null, "Informe a senha");
+                   conta = manipulaArquivo.pesquisarSenha(usuario,senha);
+                   continuar = true;
+                   JOptionPane.showMessageDialog(null, "Login realizado com sucesso!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                   TelaPrincipalRPG tela = new TelaPrincipalRPG();
+                   tela.jogadas(null);
               }
-              else{
-                   this.senha = senha;
-                   return 1;
+              catch (FileNotFoundException err)
+              {
+                   JOptionPane.showMessageDialog(null, "Erro! Arquivo não encontrado!", "Aviso", JOptionPane.ERROR_MESSAGE);
               }
-         }
-         catch(NullPointerException erroNome){
-              return 0;
-         } 
-    }
-    //Método para recuperar o conteúdo que está na variável senha.
-    public String getSenha(){
-         return this.senha;
+              catch (IOException err)
+              {
+                   JOptionPane.showMessageDialog(null, "Erro! Não foi possivel acessar os dados!", "Aviso", JOptionPane.ERROR_MESSAGE);
+              }
+              catch (ClassNotFoundException err)
+              {
+                   JOptionPane.showMessageDialog(null, "Erro! Senha errado!", "Aviso", JOptionPane.ERROR_MESSAGE);
+              }
+         }while ( continuar == false );
+         return conta;
     }
 }

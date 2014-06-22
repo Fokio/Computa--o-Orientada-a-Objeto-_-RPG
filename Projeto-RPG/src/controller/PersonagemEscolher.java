@@ -28,9 +28,6 @@ public class PersonagemEscolher {
         */
         else if ( numero == 0 ){
             PersonagemArqueiro personagemArqueiro = new PersonagemArqueiro();
-            personagemArqueiro.valorDestreza();
-            personagemArqueiro.valorForca();
-            personagemArqueiro.valorInteligencia();
             sobrePersonagem.sobre(numero);
         }
         /*se o numero for igual a 1, irá criar um objeto da classe PersonagemGuerreiro e chamar os metodos
@@ -38,9 +35,6 @@ public class PersonagemEscolher {
         */
         else if ( numero == 1 ){
             PersonagemGuerreiro personagemGuerreiro = new PersonagemGuerreiro();
-            personagemGuerreiro.valorDestreza();
-            personagemGuerreiro.valorForca();
-            personagemGuerreiro.valorInteligencia();
             sobrePersonagem.sobre(numero);
         }
         /*se o numero for diferente de todos acima, irá criar um objeto da classe PersonagemMago e chamar os metodos
@@ -48,9 +42,6 @@ public class PersonagemEscolher {
         */
         else{
             PersonagemMago personagemMago = new PersonagemMago();
-            personagemMago.valorDestreza();
-            personagemMago.valorForca();
-            personagemMago.valorInteligencia();
             sobrePersonagem.sobre(numero);
         }
     }
